@@ -1,0 +1,13 @@
+@media only screen and (max-width: 1200px) {
+    #usr_prof{
+        display:none;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #chat_box{
+        display:none;
+    }
+    #recent_usrs{
+        width: 100%;
+    }
+}
