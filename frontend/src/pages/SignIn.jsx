@@ -6,12 +6,13 @@ import Google from '../assets/google.png';
 import fb from '../assets/fb.jpg';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import BeatLoader from "react-spinners/BeatLoader";
 
 const SignIn = () => {
 
 
 
-  
+  const [loading, setloading] = useState(false);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,6 +35,7 @@ const SignIn = () => {
     }, []);
   const handleLogin = async(e) => {
     e.preventDefault();
+    setloading(true);
     try{
       const response = await axios.post(process.env.REACT_APP_SERVER_IP+"api/auth/signin",{
         email,
@@ -45,6 +47,7 @@ const SignIn = () => {
         window.location = '/';
       }
     }catch(err){
+      setloading(false);
       toast.error("Invalid email or password!")
     }
   };
@@ -59,6 +62,7 @@ const SignIn = () => {
           <img src={Character} alt="" className='w-[350px] h-[500px]'/>
       </div>
       <div className='w-full h-full bg-[white] sm:bg-[#63E2C6] flex flex-col items-center justify-center'>
+      {!loading&&<>
           <div className='sm:w-[300px] text-start mt-[60px] sm:mt-[80px]'>
             <h1 className='font-bold sm:text-[white] text-[#63E2C6] text-[20px] sm:text-[30px]'>Welcome back</h1>
           </div>
@@ -88,7 +92,10 @@ const SignIn = () => {
           </div>
           </div>
 
-          
+</>}
+{
+  loading&&<BeatLoader></BeatLoader>
+}
       </div>
       </div>
      </div>

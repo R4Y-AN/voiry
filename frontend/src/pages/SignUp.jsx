@@ -7,8 +7,10 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast';
+import BeatLoader from "react-spinners/BeatLoader";
 
 const SignUp = () => {
+  const [loading, setloading] = useState(false);
   const navigate = useNavigate();
   const audioD = useSelector((state) => state.data.audio);
   useEffect(() => {
@@ -30,7 +32,7 @@ const SignUp = () => {
 
   const handleSignUp = async (event) => {
     event.preventDefault();
-  
+    setloading(true);
     try{
       const response = await axios.post(process.env.REACT_APP_SERVER_IP+"api/auth/signup",{
         username,
@@ -43,6 +45,7 @@ const SignUp = () => {
         window.location = '/';
       }
     }catch(err){
+      setloading(false);
       toast.error("Username or email already exits.")
     }
   };
@@ -56,7 +59,7 @@ const SignUp = () => {
           <img src={Character} alt="" className='w-[350px] h-[500px]'/>
       </div>
       <div className='w-full h-full bg-[white] sm:bg-[#63E2C6] flex flex-col items-center justify-center'>
-          <div className='sm:w-[300px] text-start mt-[60px] sm:mt-[80px]'>
+         {!loading&&<> <div className='sm:w-[300px] text-start mt-[60px] sm:mt-[80px]'>
             <h1 className='font-bold sm:text-[white] text-[#63E2C6] text-[20px] sm:text-[30px]'>Welcome back</h1>
           </div>
           <div className='flex flex-col sm:w-[300px] h-full space-y-3  mt-[40px] mb-3'>
@@ -86,7 +89,10 @@ const SignUp = () => {
           </div>
           </div>
 
-          
+          </>}
+          {
+            loading&&<BeatLoader></BeatLoader>
+          }
       </div>
       </div>
      </div>
