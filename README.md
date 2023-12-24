@@ -13,6 +13,11 @@ A MERN (MongoDB, Express.js, React.js, Node.js) web application for sharing audi
 
 ## Introduction
 
+Upload audio recordings, share your thoughts, ideas, stories, or anything that moves you. Whether it's a song, a poem, a personal anecdote, or a thought-provoking monologue, your voice deserves to be heard.
+Voiry is a voice sharing application developed by Rayan. It uses MongoDB for storing data, Firebase for storing Files and Chat, Reactjs and Tailwind CSS for the frontend and NodeJS Express for the backend.
+I have also used some other libraries like bcryptjs, axios, redux, react-scroll, jwt etc
+The api endpoints that are used in this app are also very secure.
+
 ## Screenshots
 
 See Voiry in action:
@@ -26,13 +31,16 @@ _Home Page_
 ![Screenshot 3](https://firebasestorage.googleapis.com/v0/b/voiry-webapp.appspot.com/o/Images%2Fupload.png?alt=media&token=a2c8db94-a4f2-4d01-a52e-c78b9cb93afc)
 _Upload Page_
 
-![Screenshot 4](https://firebasestorage.googleapis.com/v0/b/voiry-webapp.appspot.com/o/Images%2Fexplorer.png?alt=media&token=d1f9dae2-ec20-4c1a-b891-527fa6965631)
+![Screenshot 4](https://firebasestorage.googleapis.com/v0/b/voiry-webapp.appspot.com/o/Images%2Fchat.png?alt=media&token=809827bf-7dd7-42f8-9e9d-ec0478eade7f)
+_Chat Page_
+
+![Screenshot 5](https://firebasestorage.googleapis.com/v0/b/voiry-webapp.appspot.com/o/Images%2Fexplorer.png?alt=media&token=d1f9dae2-ec20-4c1a-b891-527fa6965631)
 _Explorer Page_
 
-![Screenshot 5](https://firebasestorage.googleapis.com/v0/b/voiry-webapp.appspot.com/o/Images%2Fprofile.png?alt=media&token=c8ee60e6-68b5-4eff-984b-0d20329e6ead)
+![Screenshot 6](https://firebasestorage.googleapis.com/v0/b/voiry-webapp.appspot.com/o/Images%2Fprofile.png?alt=media&token=c8ee60e6-68b5-4eff-984b-0d20329e6ead)
 _Profile Page_
 
-![Screenshot 6](https://firebasestorage.googleapis.com/v0/b/voiry-webapp.appspot.com/o/Images%2Fediting%20profile.png?alt=media&token=706199fc-3d87-4b02-b75e-82a70a3f437d)
+![Screenshot 7](https://firebasestorage.googleapis.com/v0/b/voiry-webapp.appspot.com/o/Images%2Fediting%20profile.png?alt=media&token=706199fc-3d87-4b02-b75e-82a70a3f437d)
 _Edit Profile Page_
 
 ## Features
