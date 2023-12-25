@@ -1,7 +1,7 @@
 import User from '../models/user.model.js';
 import { errorHandler } from '../utils/error.js';
 import { verifyUserCredentials } from '../utils/verifyUser.js';
-
+import audioPost from '../models/audiopost.model.js';
 
 export const followUser = async (req, res, next) => {
     try {
